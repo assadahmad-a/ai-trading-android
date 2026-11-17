@@ -1,4 +1,3 @@
-
 name: Build Android APK
 
 on:
@@ -6,6 +5,7 @@ on:
   push:
     paths:
       - 'AI_Trading_Android_Ready.zip'
+      - 'app/src/main/assets/index.html'
       - '.github/workflows/build.yml'
 
 jobs:
@@ -13,12 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Extract Android project
         run: |
           unzip -o AI_Trading_Android_Ready.zip -d project
+
+      - name: Apply latest app files
+        run: |
+          mkdir -p project/app/src/main/assets
+          cp app/src/main/assets/index.html project/app/src/main/assets/index.html
 
       - name: Setup Java
         uses: actions/setup-java@v4
