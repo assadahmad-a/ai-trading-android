@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Trading Analysis</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b1220;color:#e8eefc;font-family:Arial,sans-serif;padding:18px}
+.wrap{max-width:520px;margin:auto}.card{background:#151f32;border:1px solid #263650;border-radius:16px;padding:18px;margin:14px 0}
+h1{font-size:23px;margin:8px 0}p{color:#aab8d0;line-height:1.5}.tag{color:#67d5ff;font-size:12px;letter-spacing:1px}
+label{display:block;margin:12px 0 6px;color:#b8c6dd;font-size:13px}
+input,select,button{width:100%;padding:13px;border-radius:10px;border:1px solid #344763;background:#0d1728;color:#fff;font-size:15px}
+button{background:#2563eb;border:0;font-weight:bold;margin-top:16px}
+.result{text-align:center;padding:22px}.signal{font-size:32px;font-weight:800;margin:10px}.up{color:#43d19e}.down{color:#ff7777}.wait{color:#ffd166}
+.small{font-size:12px;color:#94a6c2}.row{display:flex;justify-content:space-between;border-bottom:1px solid #2a3850;padding:9px 0}
+</style></head><body><div class="wrap">
+<div class="tag">MOBILE MARKET ANALYSIS</div><h1>AI Trading Analysis</h1>
+<p>Forex 1-minute indicators. Analysis only — app trades execute nahi karti.</p>
+<div class="card">
+<label>Market</label><select id="market"><option value="forex">Forex</option><option value="otc">Quotex OTC</option></select>
+<label>Forex Pair</label><select id="symbol"><option>EUR/USD</option><option>GBP/USD</option><option>USD/JPY</option><option>USD/CHF</option><option>AUD/USD</option><option>USD/CAD</option><option>NZD/USD</option></select>
+<label>Twelve Data API Key</label><input id="key" type="password" placeholder="Apni API key yahan enter karein">
+<div class="small">Key is session mein memory mein use hoti hai. GitHub par share na karein.</div>
+<button onclick="analyze()">ANALYZE MARKET</button>
+</div>
+<div class="card result"><div class="tag">SIGNAL</div><div id="signal" class="signal wait">WAIT</div><div id="message">Analysis ke liye button dabayein.</div></div>
+<div class="card">
+<div class="row"><span>EMA 9</span><b id="ema9">—</b></div>
+<div class="row"><span>EMA 21</span><b id="ema21">—</b></div>
+<div class="row"><span>RSI 14</span><b id="rsi">—</b></div>
+<div class="row"><span>Latest close</span><b id="close">—</b></div>
+<div class="row"><span>Data time</span><b id="time">—</b></div>
+</div>
+<p class="small">Quotex OTC ka official public live-data API available nahi; OTC feed ko fake nahi kiya jata. Signals are not guaranteed and are not financial advice.</p>
+</div>
+<script>
+function onNativeApiResult(cb,b64){
+ const raw=decodeURIComponent(escape(atob(b64)));
+ const data=JSON.parse(raw);
+ if(window[cb]) window[cb](data);
+}
+function ema(values,period){let k=2/(period+1),v=values[0];for(let i=1;i<values.length;i++)v=values[i]*k+v*(1-k);return v}
+function rsi(values){let gains=0,losses=0;for(let i=values.length-14;i<values.length;i++){let d=values[i]-values[i-1];if(d>0)gains+=d;else losses-=d}let ag=gains/14,al=losses/14;return al===0?100:100-100/(1+ag/al)}
+function analyze(){
+ const market=document.getElementById('market').value;
+ const signal=document.getElementById('signal');
+ if(market==='otc'){signal.textContent='UNAVAILABLE';signal.className='signal wait';document.getElementById('message').textContent='Quotex OTC ka verified live data feed available nahi.';return}
+ const key=document.getElementById('key').value.trim();
+ if(!key){alert('Pehle Twelve Data API key enter karein.');return}
+ signal.textContent='LOADING';signal.className='signal wait';
+ const cb='cb'+Date.now();
+ window[cb]=data=>{
+   delete window[cb];
+   if(!data.values){signal.textContent='WAIT';signal.className='signal wait';document.getElementById('message').textContent=data.message||data.code||'API response error';return}
+   const values=data.values.slice().reverse().map(x=>Number(x.close));
+   if(values.length<25){document.getElementById('message').textContent='Kafi candles nahi milin.';return}
+   const e9=ema(values.slice(-30),9),e21=ema(values.slice(-30),21),rv=rsi(values),last=values[values.length-1];
+   document.getElementById('ema9').textContent=e9.toFixed(5);
+   document.getElementById('ema21').textContent=e21.toFixed(5);
+   document.getElementById('rsi').textContent=rv.toFixed(1);
+   document.getElementById('close').textContent=last.toFixed(5);
+   document.getElementById('time').textContent=data.values[0].datetime||'—';
+   let s=0;if(e9>e21)s++;else s--;if(rv>55)s++;else if(rv<45)s--;
+   signal.textContent=s>=2?'UP':s<=-2?'DOWN':'WAIT';
+   signal.className='signal '+(s>=2?'up':s<=-2?'down':'wait');
+   document.getElementById('message').textContent='EMA + RSI rule-based signal. Score probability nahi hai.';
+ };
+ NativeApi.getForexData(document.getElementById('symbol').value,key,cb);
+}
+document.getElementById('market').addEventListener('change',e=>{document.getElementById('symbol').disabled=e.target.value==='otc'});
+</script></body></html>
