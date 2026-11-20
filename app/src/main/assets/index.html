@@ -8,15 +8,14 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:22px 15px 40px}.app{max-width:560px;margin:auto}
 .top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:10px;font-weight:900;letter-spacing:1.8px;color:var(--blue)}.ready{font-size:10px;color:var(--green);font-weight:800;background:#e0f3eb;padding:7px 10px;border-radius:20px}
 .hero{display:flex;align-items:center;gap:14px;margin:20px 0}.robot{width:100px;height:100px;flex:none;border-radius:27px;background:var(--bg);box-shadow:var(--s1),var(--s2);display:grid;place-items:center}.hero h1{font-size:24px;line-height:1.12;margin:0 0 7px}.hero p{font-size:11px;color:var(--muted);line-height:1.5;margin:0}
-.card{background:var(--bg);border-radius:22px;padding:18px;margin:15px 0;box-shadow:var(--s1),var(--s2)}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px}.head h2{font-size:14px;margin:0}.eyebrow{font-size:9px;letter-spacing:1.4px;color:var(--muted);font-weight:900}
+.card{background:var(--bg);border-radius:22px;padding:18px;margin:15px 0;box-shadow:var(--s1),var(--s2)}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.head h2{font-size:14px;margin:0}.eyebrow{font-size:9px;letter-spacing:1.4px;color:var(--muted);font-weight:900}
 .field{margin:12px 0}.field label{display:block;font-size:11px;font-weight:800;color:#748198;margin:0 0 7px 3px}input,select{width:100%;border:0;outline:0;border-radius:13px;background:var(--bg);padding:14px;color:var(--ink);font-size:14px;box-shadow:inset 4px 4px 8px #cbd3e0,inset -4px -4px 8px #fff}input::placeholder{color:#a7b1c0}
 .hint{font-size:10px;color:var(--muted);line-height:1.5;margin:7px 3px}.primary{width:100%;border:0;border-radius:14px;padding:15px;background:linear-gradient(135deg,#4778e8,#7399f2);color:white;font-size:12px;font-weight:900;letter-spacing:1px;box-shadow:5px 6px 12px #bfcbe0,-4px -4px 10px #fff;cursor:pointer;margin-top:8px}.primary:disabled{opacity:.6}
 .result{text-align:center;padding:22px 15px}.signal{font-size:34px;font-weight:900;margin:8px 0}.up,.green{color:var(--green)}.down,.red{color:var(--red)}.wait{color:var(--amber)}.message{font-size:11px;color:var(--muted);line-height:1.5}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.metric,.stat{padding:14px;border-radius:15px;box-shadow:inset 4px 4px 8px #cbd3e0,inset -4px -4px 8px #fff}.metric span{display:block;font-size:10px;color:var(--muted);margin-bottom:7px}.metric b{font-size:16px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{text-align:center;padding:13px 6px}.stat b{display:block;font-size:21px}.stat span{font-size:9px;color:var(--muted);font-weight:900;letter-spacing:.5px}
 .item{padding:12px 0;border-bottom:1px solid #d9e0eb}.item:last-child{border:0}.itemtop{display:flex;justify-content:space-between;align-items:center;gap:8px}.itemname{font-size:12px;font-weight:900}.meta{font-size:10px;color:var(--muted);margin-top:5px}.badge{font-size:9px;font-weight:900;padding:6px 9px;border-radius:20px;background:#e1e8f3;color:var(--muted)}.badge.win{background:#dff4ec;color:var(--green)}.badge.loss{background:#fae5e8;color:var(--red)}.actions{display:flex;gap:8px;margin-top:9px}.small{border:0;border-radius:10px;padding:8px 11px;font-size:10px;font-weight:900;background:var(--bg);box-shadow:3px 3px 7px #cbd3e0,-3px -3px 7px #fff;cursor:pointer}.winbtn{color:var(--green)}.lossbtn{color:var(--red)}.clear{border:0;background:transparent;color:var(--red);font-size:10px;font-weight:900;cursor:pointer}.empty{text-align:center;color:var(--muted);font-size:11px;padding:18px 4px}.footer{text-align:center;color:var(--muted);font-size:10px;line-height:1.7;padding:12px 8px}
-.marketline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:4px 0 12px}.price{font-size:25px;font-weight:900;letter-spacing:-.5px}.price-meta{font-size:10px;color:var(--muted);margin-top:4px}.timer{text-align:right}.timer b{display:block;font-size:23px;color:var(--blue);font-variant-numeric:tabular-nums}.timer span{font-size:9px;color:var(--muted);font-weight:900;letter-spacing:1px}.chart-wrap{width:100%;overflow:hidden;border-radius:14px;box-shadow:inset 4px 4px 8px #cbd3e0,inset -4px -4px 8px #fff;padding:7px 3px}.chart-wrap svg{display:block;width:100%;height:auto}.chart-foot{display:flex;justify-content:space-between;gap:8px;font-size:9px;color:var(--muted);margin-top:9px}.chart-state{font-size:10px;color:var(--muted);line-height:1.5;margin-top:9px}.refresh{border:0;border-radius:10px;padding:8px 11px;font-size:10px;font-weight:900;color:var(--blue);background:var(--bg);box-shadow:3px 3px 7px #cbd3e0,-3px -3px 7px #fff}
-@media(max-width:380px){body{padding:16px 11px}.robot{width:86px;height:86px}.hero h1{font-size:21px}.card{padding:15px}.stat b{font-size:18px}.price{font-size:22px}}
+@media(max-width:380px){body{padding:16px 11px}.robot{width:86px;height:86px}.hero h1{font-size:21px}.card{padding:15px}.stat b{font-size:18px}}
 </style>
 </head>
 <body><main class="app">
@@ -30,21 +29,14 @@
 <path d="M32 82v6m36-6v6" stroke="#4778e8" stroke-width="5" stroke-linecap="round"/><rect x="36" y="85" width="28" height="7" rx="3.5" fill="#9db7ee"/>
 </svg></div><div><h1>Your AI Market<br>Assistant</h1><p>Clear market insights. Track every result. Improve with data.</p></div></header>
 
-<section class="card"><div class="head"><h2>Market Analysis</h2><span class="eyebrow">FOREX DATA</span></div>
+<section class="card"><div class="head"><h2>Market Analysis</h2><span class="eyebrow">LIVE DATA</span></div>
 <div class="field"><label for="market">Market</label><select id="market"><option value="forex">Forex</option><option value="otc">Quotex OTC</option></select></div>
 <div class="field"><label for="symbol">Forex Pair</label><select id="symbol"><option>EUR/USD</option><option>GBP/USD</option><option>USD/JPY</option><option>USD/CHF</option><option>AUD/USD</option><option>USD/CAD</option><option>NZD/USD</option></select></div>
 <div class="field"><label for="key">Twelve Data API Key</label><input id="key" type="password" autocomplete="off" placeholder="Enter your API key"></div>
 <p class="hint">Your API key is used for this session only. Never share it or commit it to GitHub.</p>
-<button class="primary" id="analyzeBtn" onclick="analyze()">CONNECT & ANALYZE</button></section>
+<button class="primary" id="analyzeBtn" onclick="analyze()">ANALYZE MARKET</button></section>
 
-<section class="card"><div class="head"><h2>Forex Live Chart</h2><button class="refresh" id="refreshBtn" onclick="refreshMarket(true)">REFRESH</button></div>
-<div class="marketline"><div><div class="eyebrow" id="chartPair">EUR/USD</div><div class="price" id="livePrice">—</div><div class="price-meta" id="priceTime">Waiting for market data</div></div><div class="timer"><b id="candleTimer">01:00</b><span>NEXT MINUTE</span></div></div>
-<div class="chart-wrap"><svg id="candleChart" viewBox="0 0 340 190" role="img" aria-label="One-minute Forex candlestick chart"><text x="170" y="95" text-anchor="middle" fill="#8492a8" font-size="11">Connect to load chart</text></svg></div>
-<div class="chart-foot"><span>1-MINUTE CANDLES</span><span id="candleCount">No candles loaded</span></div>
-<div class="chart-state" id="chartStatus">Connect with your Twelve Data API key to load Forex candles. Automatic refresh is every 2 minutes while the app is open.</div>
-</section>
-
-<section class="card result"><div class="eyebrow">LATEST SIGNAL</div><div id="signal" class="signal wait">WAIT</div><div id="message" class="message">Select a Forex pair and connect to market data.</div></section>
+<section class="card result"><div class="eyebrow">LATEST SIGNAL</div><div id="signal" class="signal wait">WAIT</div><div id="message" class="message">Select a Forex pair and run your first analysis.</div></section>
 
 <section class="card"><div class="head"><h2>Technical Indicators</h2><span class="eyebrow">1 MIN</span></div><div class="grid">
 <div class="metric"><span>EMA 9</span><b id="ema9">—</b></div><div class="metric"><span>EMA 21</span><b id="ema21">—</b></div><div class="metric"><span>RSI 14</span><b id="rsi">—</b></div><div class="metric"><span>Latest Close</span><b id="close">—</b></div></div><p class="hint" id="dataTime">Data time: —</p></section>
@@ -54,12 +46,11 @@
 <p class="hint">Accuracy is calculated from completed WIN/LOSS records only. Pending signals are not counted.</p></section>
 
 <section class="card"><div class="head"><h2>Signal History</h2><button class="clear" onclick="clearHistory()">CLEAR HISTORY</button></div><div id="history"><div class="empty">No signals recorded yet. Run an analysis to begin.</div></div></section>
-<footer class="footer">Analysis only — this app does not place trades.<br>Signals are rule-based and are not guaranteed or financial advice.<br>Forex data is supplied by Twelve Data and may differ from Quotex prices. Price refreshes every 2 minutes; the countdown is aligned to your device clock.<br>Quotex OTC live data is not verified or available through this app.</footer>
+<footer class="footer">Analysis only — this app does not place trades.<br>Signals are rule-based and are not guaranteed or financial advice.<br>Quotex OTC live data is not verified or available through this app.</footer>
 </main>
 <script>
 const STORAGE_KEY='nexus_ai_signal_history_v1';
-let refreshTimer=null,lastCandles=[],lastDataTime='',requestBusy=false;
-function onNativeApiResult(cb,b64){try{const raw=decodeURIComponent(escape(atob(b64)));const data=JSON.parse(raw);if(window[cb])window[cb](data);}catch(e){document.getElementById('message').textContent='Could not read the market data response.';document.getElementById('chartStatus').textContent='Could not read market data response.';}}
+function onNativeApiResult(cb,b64){try{const raw=decodeURIComponent(escape(atob(b64)));const data=JSON.parse(raw);if(window[cb])window[cb](data);}catch(e){document.getElementById('message').textContent='Could not read the market data response.';}}
 function ema(values,period){let k=2/(period+1),v=values[0];for(let i=1;i<values.length;i++)v=values[i]*k+v*(1-k);return v;}
 function rsi(values){let gains=0,losses=0;for(let i=values.length-14;i<values.length;i++){let d=values[i]-values[i-1];if(d>0)gains+=d;else losses-=d;}let ag=gains/14,al=losses/14;return al===0?100:100-100/(1+ag/al);}
 function readHistory(){try{const v=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
@@ -72,54 +63,18 @@ host.innerHTML=items.slice().reverse().map(x=>{const state=x.outcome||'PENDING',
 function setOutcome(id,outcome){const items=readHistory(),item=items.find(x=>x.id===id);if(!item||item.outcome!=='PENDING')return;item.outcome=outcome;saveHistory(items);renderHistory();}
 function clearHistory(){if(!confirm('Delete all saved signal history from this device?'))return;saveHistory([]);renderHistory();}
 function recordSignal(signal,symbol){const now=new Date(),items=readHistory();items.push({id:Date.now()+Math.floor(Math.random()*1000),signal,symbol,outcome:'PENDING',dateLabel:now.toLocaleDateString(),timeLabel:now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),dayKey:now.toISOString().slice(0,10)});saveHistory(items);renderHistory();}
-function formatPrice(n){return Number(n).toFixed(String(document.getElementById('symbol').value).includes('JPY')?3:5);}
-function drawChart(candles){
-const svg=document.getElementById('candleChart');if(!candles.length){svg.innerHTML='<text x="170" y="95" text-anchor="middle" fill="#8492a8" font-size="11">No candle data</text>';return;}
-const data=candles.slice(-30),high=Math.max(...data.map(x=>x.high)),low=Math.min(...data.map(x=>x.low)),range=high-low||Math.abs(high)*0.0001||0.0001;
-const top=12,bottom=157,left=8,right=292,plotH=bottom-top,step=(right-left)/data.length,cw=Math.max(3,step*.55);
-const y=p=>bottom-((p-low)/range)*plotH;
-let out='';
-for(let i=0;i<=4;i++){const yy=top+i*plotH/4,price=high-i*range/4;out+='<line x1="'+left+'" y1="'+yy+'" x2="'+right+'" y2="'+yy+'" stroke="#d6deeb" stroke-width="1" stroke-dasharray="3 3"/><text x="298" y="'+(yy+3)+'" fill="#8492a8" font-size="8">'+price.toFixed(String(document.getElementById('symbol').value).includes('JPY')?3:5)+'</text>';}
-data.forEach((c,i)=>{const x=left+i*step+step/2,up=c.close>=c.open,color=up?'#159b75':'#dc6370',yo=y(c.open),yc=y(c.close),body=Math.max(1.5,Math.abs(yc-yo));out+='<line x1="'+x+'" y1="'+y(c.high)+'" x2="'+x+'" y2="'+y(c.low)+'" stroke="'+color+'" stroke-width="1.3"/><rect x="'+(x-cw/2)+'" y="'+Math.min(yo,yc)+'" width="'+cw+'" height="'+body+'" rx="1" fill="'+color+'"/>';});
-const last=data[data.length-1];out+='<line x1="'+left+'" y1="'+y(last.close)+'" x2="'+right+'" y2="'+y(last.close)+'" stroke="#4778e8" stroke-width="1" stroke-dasharray="4 3"/>';
-svg.innerHTML=out;
-document.getElementById('candleCount').textContent=data.length+' candles shown';
-}
-function updateCountdown(){const now=new Date(),remaining=60-now.getSeconds();document.getElementById('candleTimer').textContent='00:'+String(remaining).padStart(2,'0');}
-function updateFromData(data,shouldRecord){
-if(!data||!Array.isArray(data.values)){const msg=(data&&(data.message||data.code))||'Market data unavailable. Check your API key or API limit.';document.getElementById('chartStatus').textContent=msg;document.getElementById('message').textContent=msg;return;}
-const raw=data.values.slice().reverse(),candles=raw.map(x=>({datetime:x.datetime,open:Number(x.open),high:Number(x.high),low:Number(x.low),close:Number(x.close)})).filter(x=>[x.open,x.high,x.low,x.close].every(Number.isFinite));
-if(candles.length<25){document.getElementById('chartStatus').textContent='Not enough valid candles were returned.';return;}
-lastCandles=candles;lastDataTime=raw.length?raw[raw.length-1].datetime:'';
-const values=candles.map(x=>x.close),e9=ema(values.slice(-30),9),e21=ema(values.slice(-30),21),rv=rsi(values),last=candles[candles.length-1];
-document.getElementById('chartPair').textContent=document.getElementById('symbol').value;
-document.getElementById('livePrice').textContent=formatPrice(last.close);
-document.getElementById('priceTime').textContent='Provider candle: '+(last.datetime||'time unavailable');
-document.getElementById('ema9').textContent=e9.toFixed(5);document.getElementById('ema21').textContent=e21.toFixed(5);document.getElementById('rsi').textContent=rv.toFixed(1);document.getElementById('close').textContent=last.close.toFixed(5);
-document.getElementById('dataTime').textContent='Data time: '+(last.datetime||'—');
-drawChart(candles);
-document.getElementById('chartStatus').textContent='Last successful refresh: '+new Date().toLocaleTimeString()+' · Updates every 2 minutes while app is open.';
-let score=0;if(e9>e21)score++;else score--;if(rv>55)score++;else if(rv<45)score--;const result=score>=2?'UP':score<=-2?'DOWN':'WAIT';
-const signal=document.getElementById('signal'),message=document.getElementById('message');signal.textContent=result;signal.className='signal '+(result==='UP'?'up':result==='DOWN'?'down':'wait');message.textContent='EMA + RSI rule-based signal. This score is not a probability or guaranteed outcome.';
-if(shouldRecord&&(result==='UP'||result==='DOWN'))recordSignal(result,document.getElementById('symbol').value);
-}
-function refreshMarket(manual){
-if(document.getElementById('market').value==='otc'){document.getElementById('chartStatus').textContent='OTC feed is not supported. Select Forex to load the chart.';return;}
-const key=document.getElementById('key').value.trim();if(!key){if(manual)alert('Please enter your Twelve Data API key first.');return;}
-if(requestBusy)return;requestBusy=true;document.getElementById('refreshBtn').disabled=true;document.getElementById('chartStatus').textContent='Refreshing Forex candles…';
-const cb='cb'+Date.now();window[cb]=data=>{delete window[cb];requestBusy=false;document.getElementById('refreshBtn').disabled=false;updateFromData(data,false);};
-try{NativeApi.getForexData(document.getElementById('symbol').value,key,cb);}catch(e){requestBusy=false;document.getElementById('refreshBtn').disabled=false;document.getElementById('chartStatus').textContent='Unable to connect to the Android data service.';}
-}
-function startAutoRefresh(){if(refreshTimer)clearInterval(refreshTimer);refreshMarket(false);refreshTimer=setInterval(()=>{if(document.visibilityState==='visible')refreshMarket(false);},120000);}
-function analyze(){
-const market=document.getElementById('market').value,signal=document.getElementById('signal'),message=document.getElementById('message');
-if(market==='otc'){stopAutoRefresh();signal.textContent='UNAVAILABLE';signal.className='signal wait';message.textContent='A verified live data feed for Quotex OTC is not available. No OTC signal will be generated.';document.getElementById('chartStatus').textContent='Select Forex to use the Forex chart.';return;}
+function analyze(){const market=document.getElementById('market').value,signal=document.getElementById('signal'),message=document.getElementById('message');
+if(market==='otc'){signal.textContent='UNAVAILABLE';signal.className='signal wait';message.textContent='A verified live data feed for Quotex OTC is not available. No OTC signal will be generated.';return;}
 const key=document.getElementById('key').value.trim();if(!key){alert('Please enter your Twelve Data API key first.');return;}
-signal.textContent='LOADING';signal.className='signal wait';message.textContent='Connecting to Forex market data…';startAutoRefresh();
-}
-function stopAutoRefresh(){if(refreshTimer){clearInterval(refreshTimer);refreshTimer=null;}}
-document.getElementById('market').addEventListener('change',e=>{const otc=e.target.value==='otc';document.getElementById('symbol').disabled=otc;if(otc){stopAutoRefresh();document.getElementById('chartStatus').textContent='OTC live data is not available in this app.';}});
-document.getElementById('symbol').addEventListener('change',()=>{document.getElementById('chartPair').textContent=document.getElementById('symbol').value;if(refreshTimer)refreshMarket(false);});
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&refreshTimer)refreshMarket(false);});
-setInterval(updateCountdown,250);updateCountdown();renderHistory();
+signal.textContent='LOADING';signal.className='signal wait';message.textContent='Fetching the latest market candles…';document.getElementById('analyzeBtn').disabled=true;
+const cb='cb'+Date.now();window[cb]=data=>{delete window[cb];document.getElementById('analyzeBtn').disabled=false;
+if(!data||!data.values){signal.textContent='WAIT';signal.className='signal wait';message.textContent=(data&&(data.message||data.code))||'Market data unavailable. Check your API key or API limit.';return;}
+const values=data.values.slice().reverse().map(x=>Number(x.close)).filter(Number.isFinite);if(values.length<25){signal.textContent='WAIT';signal.className='signal wait';message.textContent='Not enough valid candles were returned.';return;}
+const e9=ema(values.slice(-30),9),e21=ema(values.slice(-30),21),rv=rsi(values),last=values[values.length-1];
+document.getElementById('ema9').textContent=e9.toFixed(5);document.getElementById('ema21').textContent=e21.toFixed(5);document.getElementById('rsi').textContent=rv.toFixed(1);document.getElementById('close').textContent=last.toFixed(5);document.getElementById('dataTime').textContent='Data time: '+(data.values[0].datetime||'—');
+let score=0;if(e9>e21)score++;else score--;if(rv>55)score++;else if(rv<45)score--;const result=score>=2?'UP':score<=-2?'DOWN':'WAIT';
+signal.textContent=result;signal.className='signal '+(result==='UP'?'up':result==='DOWN'?'down':'wait');message.textContent='EMA + RSI rule-based signal. This score is not a probability or guaranteed outcome.';
+if(result==='UP'||result==='DOWN')recordSignal(result,document.getElementById('symbol').value);};
+try{NativeApi.getForexData(document.getElementById('symbol').value,key,cb);}catch(e){document.getElementById('analyzeBtn').disabled=false;signal.textContent='WAIT';signal.className='signal wait';message.textContent='Unable to connect to the Android data service.';}}
+document.getElementById('market').addEventListener('change',e=>{document.getElementById('symbol').disabled=e.target.value==='otc';});renderHistory();
 </script></body></html>
